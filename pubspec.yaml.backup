@@ -7,7 +7,6 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  provider: ^6.0.5
   flutter:
     sdk: flutter
   
@@ -28,6 +27,7 @@ dependencies:
   sign_in_with_apple: ^4.0.0  # Downgraded from ^5.0.0 due to compatibility issues
   
   # State management
+  provider: ^6.0.5
   
   # Storage & preferences
   shared_preferences: ^2.2.1
@@ -66,7 +66,8 @@ dev_dependencies:
   build_runner: ^2.4.6
 
 dependency_overrides:
-  sign_in_with_apple: ^6.1.4  # Use a newer version that's compatible with Java 17
+  sign_in_with_apple: 4.3.0
+  # Remove any custom implementations you created previously
 
 flutter:
   uses-material-design: true

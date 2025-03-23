@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '12.0'  # Make sure this is at the top of the file
+platform :ios, '13.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -29,56 +29,42 @@ flutter_ios_podfile_setup
 
 target 'Runner' do
   use_frameworks!
+  use_modular_headers!
+
+  # Update Firebase pods to latest versions
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Messaging'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
   target 'RunnerTests' do
     inherit! :search_paths
   end
 end
 
 post_install do |installer|
-  # Process all targets
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
     
-    # Process all build configurations
+    # Add these lines to fix build settings
     target.build_configurations.each do |config|
-      # Force iOS 12.0 minimum
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
       
-      # Completely remove the -G flag from all compiler flags 
-      if config.build_settings['OTHER_CFLAGS']
-        config.build_settings['OTHER_CFLAGS'] = config.build_settings['OTHER_CFLAGS'].gsub(/-G\s*/, '')
-      end
-      
-      # Explicitly set compiler flags without -G
-      config.build_settings['OTHER_CFLAGS'] ||= '$(inherited)'
-      
-      # Handle specific architecture issues
+      # Add this for M1 Macs running iOS simulator
       config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
-      
-      # Disable bitcode which can cause issues
-      config.build_settings['ENABLE_BITCODE'] = 'NO'
-      
-      # Force Swift version compatibility
-      config.build_settings['SWIFT_VERSION'] = '5.0'
-
-      # Fix any hardcoded simulator architectures
-      config.build_settings['VALID_ARCHS'] = 'arm64 arm64e x86_64'
-      
-      # Fix validation issues
-      config.build_settings.delete('ARCHS')
-      
-      # Force newer compiler
-      config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'gnu++17'
-      config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
     end
-
-    # Force-fix any project-level flags
-    installer.pods_project.build_configurations.each do |config|
-      config.build_settings['VALID_ARCHS'] = 'arm64 arm64e x86_64'
-      if config.build_settings['OTHER_CFLAGS']
-        config.build_settings['OTHER_CFLAGS'] = config.build_settings['OTHER_CFLAGS'].gsub(/-G\s*/, '')
+    
+    # Your existing BoringSSL fix...
+    if target.name == 'BoringSSL-GRPC'
+      target.source_build_phase.files.each do |file|
+        if file.settings && file.settings['COMPILER_FLAGS']
+          flags = file.settings['COMPILER_FLAGS'].split
+          flags.reject! { |flag| flag == '-GCC_WARN_INHIBIT_ALL_WARNINGS' }
+          file.settings['COMPILER_FLAGS'] = flags.join(' ')
+        end
       end
     end
   end
