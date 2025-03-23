@@ -4,6 +4,7 @@ import 'package:dart_rss/dart_rss.dart';
 import '../models/rss_item.dart' as app;
 import '../theme/brand_colors.dart';
 import '../constants/app_routes.dart';
+import '../utils/date_formatter.dart';
 
 class RSSFeedScreen extends StatefulWidget {
   final String feedURL;
@@ -206,7 +207,8 @@ class _RSSFeedScreenState extends State<RSSFeedScreen> {
                           const SizedBox(height: 8),
                           if (item.pubDate != null)
                             Text(
-                              _formatDate(DateTime.parse(item.pubDate!)),
+                              _formatDate(DateFormatter.parseRssDate(
+                                  item.pubDate ?? '')),
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey[500],

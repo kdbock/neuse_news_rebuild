@@ -1,0 +1,73 @@
+
+Showing Recent Issues
+
+Build target sqflite_darwin of project Pods with configuration Debug
+
+VerifyModule /Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Products/Debug-iphonesimulator/sqflite_darwin/sqflite_darwin.framework (in target 'sqflite_darwin' from project 'Pods')
+    cd /Users/kristybock/neuse_news_rebuild/ios/Pods
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/modules-verifier /Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Products/Debug-iphonesimulator/sqflite_darwin/sqflite_darwin.framework --clang /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --diagnostic-filename-map /Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/sqflite_darwin.build/sqflite_darwin-diagnostic-filename-map.json --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk --intermediates-directory /Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/sqflite_darwin.build/VerifyModule --target x86_64-apple-ios13.0-simulator --language objective-c --standard gnu11 --standard gnu++14
+
+/Users/kristybock/neuse_news_rebuild/ios/Pods/Target Support Files/sqflite_darwin/sqflite_darwin-umbrella.h:13:9: error: double-quoted include "SqfliteImportPublic.h" in framework header, expected angle-bracketed instead
+/Users/kristybock/.pub-cache/hosted/pub.dev/sqflite_darwin-2.4.2/darwin/sqflite_darwin/Sources/sqflite_darwin/include/sqflite_darwin/SqfliteImportPublic.h:15:9: error: 'Flutter/Flutter.h' file not found
+/Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/sqflite_darwin.build/VerifyModule/sqflite_darwin_objective-c_x86_64-apple-ios13.0-simulator_gnu11/Test/Test.framework/Headers/Test.h:1:9: error: (fatal) could not build module 'sqflite_darwin'
+/Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/sqflite_darwin.build/VerifyModule/sqflite_darwin_objective-c_x86_64-apple-ios13.0-simulator_gnu11/Test/Test.m:1:9: error: (fatal) could not build module 'Test'
+
+/Users/kristybock/neuse_news_rebuild/ios/Pods/Target Support Files/sqflite_darwin/sqflite_darwin-umbrella.h:13:9: double-quoted include "SqfliteImportPublic.h" in framework header, expected angle-bracketed instead
+
+/Users/kristybock/.pub-cache/hosted/pub.dev/sqflite_darwin-2.4.2/darwin/sqflite_darwin/Sources/sqflite_darwin/include/sqflite_darwin/SqfliteImportPublic.h:15:9: 'Flutter/Flutter.h' file not found
+
+/Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/sqflite_darwin.build/VerifyModule/sqflite_darwin_objective-c_x86_64-apple-ios13.0-simulator_gnu11/Test/Test.framework/Headers/Test.h:1:9: (fatal) could not build module 'sqflite_darwin'
+
+/Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/sqflite_darwin.build/VerifyModule/sqflite_darwin_objective-c_x86_64-apple-ios13.0-simulator_gnu11/Test/Test.m:1:9: (fatal) could not build module 'Test'
+
+
+Build target package_info_plus of project Pods with configuration Debug
+
+VerifyModule /Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Products/Debug-iphonesimulator/package_info_plus/package_info_plus.framework (in target 'package_info_plus' from project 'Pods')
+    cd /Users/kristybock/neuse_news_rebuild/ios/Pods
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/modules-verifier /Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Products/Debug-iphonesimulator/package_info_plus/package_info_plus.framework --clang /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --diagnostic-filename-map /Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/package_info_plus.build/package_info_plus-diagnostic-filename-map.json --sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk --intermediates-directory /Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/package_info_plus.build/VerifyModule --target x86_64-apple-ios13.0-simulator --language objective-c --standard gnu11 --standard gnu++14
+
+/Users/kristybock/neuse_news_rebuild/ios/Pods/Target Support Files/package_info_plus/package_info_plus-umbrella.h:13:9: error: double-quoted include "FPPPackageInfoPlusPlugin.h" in framework header, expected angle-bracketed instead
+/Users/kristybock/.pub-cache/hosted/pub.dev/package_info_plus-4.2.0/ios/Classes/FPPPackageInfoPlusPlugin.h:5:9: error: 'Flutter/Flutter.h' file not found
+/Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/package_info_plus.build/VerifyModule/package_info_plus_objective-c_x86_64-apple-ios13.0-simulator_gnu11/Test/Test.framework/Headers/Test.h:1:9: error: (fatal) could not build module 'package_info_plus'
+/Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/package_info_plus.build/VerifyModule/package_info_plus_objective-c_x86_64-apple-ios13.0-simulator_gnu11/Test/Test.m:1:9: error: (fatal) could not build module 'Test'
+
+/Users/kristybock/neuse_news_rebuild/ios/Pods/Target Support Files/package_info_plus/package_info_plus-umbrella.h:13:9: double-quoted include "FPPPackageInfoPlusPlugin.h" in framework header, expected angle-bracketed instead
+
+/Users/kristybock/.pub-cache/hosted/pub.dev/package_info_plus-4.2.0/ios/Classes/FPPPackageInfoPlusPlugin.h:5:9: 'Flutter/Flutter.h' file not found
+
+/Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/package_info_plus.build/VerifyModule/package_info_plus_objective-c_x86_64-apple-ios13.0-simulator_gnu11/Test/Test.framework/Headers/Test.h:1:9: (fatal) could not build module 'package_info_plus'
+
+/Users/kristybock/Library/Developer/Xcode/DerivedData/Runner-cxpikshefvmfasdzhxapnvpemlvs/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/package_info_plus.build/VerifyModule/package_info_plus_objective-c_x86_64-apple-ios13.0-simulator_gnu11/Test/Test.m:1:9: (fatal) could not build module 'Test'
+
+
+Build target gRPC-Core of project Pods with configuration Debug
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'gRPC-Core' from project 'Pods')
+
+
+Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase.
+
+
+Build target gRPC-C++ of project Pods with configuration Debug
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'gRPC-C++' from project 'Pods')
+
+
+Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase.
+
+
+Build target abseil of project Pods with configuration Debug
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'abseil' from project 'Pods')
+
+
+Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase.
+
+
+Build target BoringSSL-GRPC of project Pods with configuration Debug
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'BoringSSL-GRPC' from project 'Pods')
+
+
+Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase.
+
+
+
+Build failed    3/23/25, 4:35 PM    17.7 seconds

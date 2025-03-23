@@ -3,7 +3,7 @@
 /// API endpoints for the application
 class ApiEndpoints {
   /// RSS feed endpoints
-  static final RssFeeds = _RssFeeds();
+  static final rssFeeds = _RssFeeds();
 }
 
 /// RSS feed endpoints

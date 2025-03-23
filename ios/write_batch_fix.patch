@@ -1,0 +1,11 @@
+--- write_batch.cc.orig
++++ write_batch.cc
+@@ -14,7 +14,7 @@
+ #include <stdint.h>
+ #include "leveldb/write_batch.h"
+ #include "db/dbformat.h"
+-#include "db/memtable.h"
++#include "../db/memtable.h"
+ #include "db/write_batch_internal.h"
+ #include "leveldb/db.h"
+ #include "util/coding.h"

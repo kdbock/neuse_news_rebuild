@@ -7,9 +7,9 @@ enum Environment { development, staging, production }
 
 /// Configuration for different environment settings
 class EnvironmentConfig {
-  static late Map<String, dynamic> _config;
-  static late Environment _environment;
-  static late bool _initialized;
+  static Map<String, dynamic> _config = {};
+  static Environment _environment =
+      Environment.production; // Default to production
 
   /// Initialize the environment configuration
   static void initialize({
@@ -18,7 +18,6 @@ class EnvironmentConfig {
   }) {
     _environment = environment;
     _config = config;
-    _initialized = true;
   }
 
   /// Get Firebase options for the current environment

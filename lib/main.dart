@@ -9,6 +9,20 @@ Future<void> main() async {
     WidgetsFlutterBinding.ensureInitialized();
     print("Flutter binding initialized");
 
+    // Initialize config BEFORE Firebase
+    EnvironmentConfig.initialize(
+      environment: Environment.production,
+      config: {
+        'apiBaseUrl': 'https://api.neusenews.com',
+        'verboseLogging': false,
+        'analyticsEnabled': true,
+        'crashlyticsEnabled': true,
+        'adTrackingEnabled': true,
+        'adRefreshInterval': 30,
+        'cacheDuration': 15,
+      },
+    );
+
     // Initialize Firebase
     try {
       await Firebase.initializeApp(
@@ -33,9 +47,9 @@ Future<void> main() async {
   }
 }
 
-// Create a simple fallback app for when Firebase fails
+// Simple fallback app for when initialization fails
 class FallbackApp extends StatelessWidget {
-  const FallbackApp({super.key});
+  const FallbackApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +59,15 @@ class FallbackApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Error initializing app. Please try again later.'),
+              const Text(
+                'Failed to initialize the app',
+                style: TextStyle(fontSize: 18),
+              ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Code to retry initialization
+                  // Retry initialization
+                  main();
                 },
                 child: const Text('Retry'),
               ),

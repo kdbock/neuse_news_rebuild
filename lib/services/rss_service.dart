@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:dart_rss/dart_rss.dart';
 import '../utils/analytics_helper.dart';
+import '../utils/date_formatter.dart';
 
 /// Service for fetching and parsing RSS feeds
 class RssService {
@@ -72,10 +73,8 @@ class RssService {
 
     // Sort by date (newest first)
     results.sort((a, b) {
-      final dateA =
-          a.pubDate != null ? DateTime.parse(a.pubDate!) : DateTime(1970);
-      final dateB =
-          b.pubDate != null ? DateTime.parse(b.pubDate!) : DateTime(1970);
+      final dateA = DateFormatter.parseRssDate(a.pubDate ?? '');
+      final dateB = DateFormatter.parseRssDate(b.pubDate ?? '');
       return dateB.compareTo(dateA);
     });
 

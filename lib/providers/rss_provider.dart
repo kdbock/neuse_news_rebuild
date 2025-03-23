@@ -226,7 +226,7 @@ class RssProvider extends ChangeNotifier {
       // If no fresh cache, load from service
       if (items.isEmpty) {
         // Get URL for the category
-        final url = ApiEndpoints.RssFeeds.getCategory(category);
+        final url = ApiEndpoints.rssFeeds.getCategory(category);
 
         // Load from service
         items = (await _rssService.fetchRssFeed(url)).cast<RssItem>();
@@ -439,17 +439,17 @@ class RssProvider extends ChangeNotifier {
   String? _getUrlForSource(String source) {
     switch (source) {
       case 'News':
-        return ApiEndpoints.RssFeeds.news;
+        return ApiEndpoints.rssFeeds.news;
       case 'Sports':
-        return ApiEndpoints.RssFeeds.sports;
+        return ApiEndpoints.rssFeeds.sports;
       case 'Political':
-        return ApiEndpoints.RssFeeds.political;
+        return ApiEndpoints.rssFeeds.political;
       case 'Business':
-        return ApiEndpoints.RssFeeds.business;
+        return ApiEndpoints.rssFeeds.business;
       case 'Classifieds':
-        return ApiEndpoints.RssFeeds.classifieds;
+        return ApiEndpoints.rssFeeds.classifieds;
       default:
-        return ApiEndpoints.RssFeeds.allFeeds[source];
+        return ApiEndpoints.rssFeeds.allFeeds[source];
     }
   }
 

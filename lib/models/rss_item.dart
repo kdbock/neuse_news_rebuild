@@ -35,8 +35,7 @@ class RssItem {
       pubDate: item.pubDate,
       imageUrl: _extractImageFromItem(item),
       categories:
-          item.categories.map((c) => c.value).whereType<String>().toList() ??
-              [],
+          item.categories.map((c) => c.value).whereType<String>().toList(),
       enclosure: item.enclosure != null
           ? {
               'url': item.enclosure!.url,
