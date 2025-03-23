@@ -1,0 +1,76 @@
+name: neuse_news
+description: "Neuse News - Local news, sports, political, and business content from eastern North Carolina"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Firebase services
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
+  cloud_firestore: ^4.14.0
+  firebase_storage: ^11.6.0
+  firebase_analytics: ^10.8.0
+  firebase_crashlytics: ^3.4.8
+  firebase_messaging: ^14.7.10
+  
+  # UI components
+  flutter_svg: ^2.0.7
+  
+  # Authentication
+  google_sign_in: ^6.1.5
+  sign_in_with_apple: ^4.0.0  # Downgraded from ^5.0.0 due to compatibility issues
+  
+  # State management
+  provider: ^6.0.5
+  
+  # Storage & preferences
+  shared_preferences: ^2.2.1
+  flutter_secure_storage: ^9.0.0
+  
+  # Networking & parsing
+  http: ^1.1.0
+  intl: ^0.19.0  # Upgrade to match dart_rss requirements
+  dart_rss: ^3.0.3
+  xml: ^6.3.0  # Required by dart_rss
+  
+  # UI components
+  shimmer: ^3.0.0
+  cached_network_image: ^3.2.3
+  flutter_html: ^3.0.0-alpha.6
+  webview_flutter: ^4.2.4
+  fl_chart: ^0.63.0
+  
+  # Device features
+  url_launcher: ^6.1.14
+  image_picker: ^1.0.4
+  share_plus: ^7.1.0
+  package_info_plus: ^4.2.0
+  
+  # Local database
+  path_provider: ^2.1.1
+  sqflite: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.3
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.3
+  mockito: ^5.4.2
+  build_runner: ^2.4.6
+
+dependency_overrides:
+  sign_in_with_apple: 4.3.0
+  # Remove any custom implementations you created previously
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
