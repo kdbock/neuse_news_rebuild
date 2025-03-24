@@ -54,7 +54,7 @@ dependencies:
   
   # Local database
   path_provider: ^2.1.1
-  sqflite: ^2.3.0
+  # sqflite: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +67,7 @@ dev_dependencies:
 
 dependency_overrides:
   sign_in_with_apple: 4.3.0  # Try an older version
+  sqflite: 2.2.0  # Add this older version
 
 flutter:
   uses-material-design: true

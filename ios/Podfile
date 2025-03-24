@@ -101,6 +101,14 @@ post_install do |installer|
         config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'YES'
       end
     end
+
+    target.build_configurations.each do |config|
+      config.build_settings['DEFINES_MODULE'] = 'YES'
+      config.build_settings['CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER'] = 'NO'
+      config.build_settings['HEADER_SEARCH_PATHS'] ||= []
+      config.build_settings['HEADER_SEARCH_PATHS'] << '${PODS_ROOT}/../../Flutter'
+      config.build_settings['HEADER_SEARCH_PATHS'] << '${PODS_ROOT}/../../Flutter/Headers'
+    end
   end
 
   # Fix script phases
